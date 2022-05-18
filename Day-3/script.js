@@ -152,6 +152,7 @@ document.getElementById("array-ex").onclick = () => {
 
   console.log('Mảng sau khi sắp xếp : ' + arr);
   console.log('Tổng các giá trị trong mảng : ' + totalarr);
+  alert('Đã sắp xếp và tính tổng theo yêu cầu.');
 
 }
 
