@@ -7,19 +7,19 @@ document.getElementById("salary").onclick = () => {
 
   function getInfor() {
     do {
-      level = prompt('Please! Enter your level : ');
+      level = prompt('Please! Enter your level(Fresher, Junior, Middle, Senior) : ');
     }
     while ((level !== 'Fresher') && (level !== 'Junior') && (level !== 'Middle') && (level !== 'Senior'));
 
     do {
-      position = prompt('Please! Enter your position : ');
+      position = prompt('Please! Enter your position(Member, Trainer, Teamlead, PM) : ');
 
     }
     while ((position !== 'Member') && (position !== 'Trainer') && (position !== 'Teamlead') && (position !== 'PM'));
 
 
     do {
-      seniority = prompt('Please! Enter your seniority : ') - 0;
+      seniority = prompt('Please! Enter your seniority(Thâm Niên) : ') - 0;
     }
     while (seniority < 0)
   }
