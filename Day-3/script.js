@@ -5,37 +5,75 @@ document.getElementById("salary").onclick = () => {
   let seniority;
   let totalSalary;
 
-  function getInfor() {
-    checkLevel = checkPosition = checkSeniority = 0;
+
+  const typeValueEmployee = (contentPrompt, isNumber, caseArray) => {
+    let isValid = false;
     do {
-      if(checkLevel>0){
-        alert('You entered incorrectly, please re-enter(Fresher, Junior, Middle, Senior):')
+      value = prompt(contentPrompt);
+      if (caseArray) {
+        switch (value) {
+          case caseArray[0]:
+          case caseArray[1]:
+          case caseArray[2]:
+          case caseArray[3]:
+            isValid = true;
+            break;
+          default:
+            isValid = false;
+        }
       }
-      level = prompt('Please! Enter your level(Fresher, Junior, Middle, Senior) : ');
-      checkLevel++;
-    }
-    while ((level !== 'Fresher') && (level !== 'Junior') && (level !== 'Middle') && (level !== 'Senior') && (level !== 'junior') && (level !== 'fresher') && (level !== 'middle') && (level !== 'senior'));
-
-
-    do {
-      if(checkPosition>0){
-        alert('You entered incorrectly, please re-enter(Member, Trainer, Teamlead, PM):')
+      else{
+        isValid = true;
+        if(value){
+          if(isNumber&& !isNaN(+value)){
+            isValid = true;
+          }
+          else isValid=false;
+        }
+        else{
+          isValid = false;
+        }
       }
-      position = prompt('Please! Enter your position(Member, Trainer, Teamlead, PM) : ');
-      checkPosition++;
     }
-    while ((position !== 'Member') && (position !== 'Trainer') && (position !== 'Teamlead') && (position !== 'PM') && (position !== 'trainer') && (position !== 'member') && (position !== 'teamlead') && (position !== 'pm'));
-
-
-    do {
-      if(checkSeniority>0){
-        alert('You entered incorrectly, please re-enter(Seniority >=0):')
-      }
-      seniority = prompt('Please! Enter your seniority(Thâm Niên) : ') - 0;
-      checkSeniority++;
-    }
-    while (seniority < 0)
+    while (!isValid);
+    return value;
   }
+
+
+  level=typeValueEmployee('Please! Enter your level(Fresher, Junior, Middle, Senior) : ',false,['Fresher','Junior','Middle','Senior']);
+  position=typeValueEmployee('Please! Enter your position(Member, Trainer, Teamlead, PM) : ',false,['Member','Teamlead','PM','Trainer']);
+  seniority=typeValueEmployee('Please! Enter your seniority(>=0) : ',true);
+  // function getInfor() {
+  //   checkLevel = checkPosition = checkSeniority = 0;
+  //   do {
+  //     if (checkLevel > 0) {
+  //       alert('You entered incorrectly, please re-enter(Fresher, Junior, Middle, Senior):')
+  //     }
+  //     level = prompt('Please! Enter your level(Fresher, Junior, Middle, Senior) : ');
+  //     checkLevel++;
+  //   }
+  //   while ((level !== 'Fresher') && (level !== 'Junior') && (level !== 'Middle') && (level !== 'Senior') && (level !== 'junior') && (level !== 'fresher') && (level !== 'middle') && (level !== 'senior'));
+
+
+  //   do {
+  //     if (checkPosition > 0) {
+  //       alert('You entered incorrectly, please re-enter(Member, Trainer, Teamlead, PM):')
+  //     }
+  //     position = prompt('Please! Enter your position(Member, Trainer, Teamlead, PM) : ');
+  //     checkPosition++;
+  //   }
+  //   while ((position !== 'Member') && (position !== 'Trainer') && (position !== 'Teamlead') && (position !== 'PM') && (position !== 'trainer') && (position !== 'member') && (position !== 'teamlead') && (position !== 'pm'));
+
+
+  //   do {
+  //     if (checkSeniority > 0) {
+  //       alert('You entered incorrectly, please re-enter(Seniority >=0):')
+  //     }
+  //     seniority = prompt('Please! Enter your seniority(Thâm Niên) : ') - 0;
+  //     checkSeniority++;
+  //   }
+  //   while (seniority < 0)
+  // }
 
   function getSalaryBasic() {
     let salaryBasic;
@@ -96,7 +134,7 @@ document.getElementById("salary").onclick = () => {
 
   function calculateSalary() {
     totalSalary = getSalaryBasic() + getSalaryBonusSeniority() + getSalaryBonusPosition();
-    if ((level === 'Senior') && (position === 'Teamlead')||(level === 'senior') && (position === 'teamlead')||(level === 'Senior') && (position === 'teamlead')||(level === 'senior') && (position === 'Teamlead')) {
+    if ((level === 'Senior') && (position === 'Teamlead') || (level === 'senior') && (position === 'teamlead') || (level === 'Senior') && (position === 'teamlead') || (level === 'senior') && (position === 'Teamlead')) {
       if (seniority < 3) {
         console.log('Thưởng trình độ Senior chức vụ Teamlead và Thâm niên dưới 3 năm: 500.000 Đồng.');
         totalSalary += 500000;
@@ -114,7 +152,7 @@ document.getElementById("salary").onclick = () => {
         totalSalary += 10000000;
       }
     }
-    if ((position === 'PM')||(position === 'pm')){
+    if ((position === 'PM') || (position === 'pm')) {
       if ((seniority >= 5) && (seniority < 8)) {
         console.log('Thưởng chức vụ PM và Thâm niên trên 5 năm(5% totalSalary): ' + totalSalary * 5 / 100 + ' Đồng.');
         totalSalary += totalSalary * 5 / 100;
@@ -126,7 +164,7 @@ document.getElementById("salary").onclick = () => {
     }
   }
 
-  getInfor();
+  // getInfor();
   console.log('Lương Trình Độ' + '(' + level + ')' + ': ' + getSalaryBasic() + ' Đồng.');
   console.log('Lương Chức Vụ' + '(' + position + ')' + ': ' + getSalaryBonusPosition() + ' Đồng.');
   console.log('Lương Thâm Niên' + '(' + seniority + ')' + ': ' + getSalaryBonusSeniority() + ' Đồng.');

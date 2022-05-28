@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+#appTvn {
+  height: 700px;
+  width: 450px;
+  margin: 30px;
+  /* border: 2px gray solid; */
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 5px #999999;
+}
+
+header {
+  padding-top: 15px;
+}
+
+hr {
+  margin-top: 15px;
+  background-color: gray;
+  width: 100%;
+  box-shadow: 0px 0px 5px #999999;
+}
+
+header .icon {
+  height: 59px;
+  width: 91%;
+  background: url(../img/logo.png) no-repeat center center /cover;
+  margin: 0px auto;
+}
+
+article {
+  padding: 15px 20px 0px 20px;
+}
+
+article .title {
+  color: #E91E63;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.infor-user {
+  height: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+article .alert-data {
+  color: #E91E63;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+.input-user {
+  background: transparent;
+  border-width: 0 0 1px 0;
+  padding: 2px 2px 1px 2px;
+  font-size: 12px;
+  border-color: #bdbdbd;
+}
+
+.input-user:focus {
+  border-width: 0 0 2px 0;
+  border-color: #3F51B5;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+button {
+  margin: 0 auto;
+}
+
+.price,
+#milestones1,
+#milestones2,
+#milestones3,
+#milestones4,
+.level {
+  text-align: center;
+}
+
+.tableDetail {
+  padding-top: 20px;
+}
+
+#total-money {
+  top: 10px;
+  position: relative;
+}
