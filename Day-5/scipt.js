@@ -2,7 +2,7 @@
 
 function birthday() {
   userName = prompt("Please enter your name:");
-  userBirthday = prompt("Please enter your birth date(1/1/2022): ");
+  userBirthday = prompt("Please enter your birth date(dd/mm/yyyy): ");
   today = new Date();
   today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
   var someDay = new Date(today.getFullYear(), userBirthday.split("/")[1] - 1, userBirthday.split("/")[0]);
