@@ -31,8 +31,9 @@ function vietlot() {
     else {
       for (let i = 0; i < 6; i++) {
         arrUser[i] = +yourNumber.split(" ")[i];
+        console.log( yourNumber.split(" ")[i]);
         arr[arrUser[i]]++;
-        if (arr[yourNumber.split(" ")[i]] === undefined || arr[yourNumber.split(" ")[i]] > 1) {
+        if (isNaN(arrUser[i])||arrUser[i]>45|| arr[arrUser[i]] > 1) {
           alert("Dữ liệu nhập vào không đúng hoặc bị trùng vui lòng nhập lại");
           countLoop++;
           arr.fill(0);
