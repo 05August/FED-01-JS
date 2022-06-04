@@ -45,12 +45,12 @@ function getAmountSpent() {
   do {
     variable = prompt('Nhập vào chi tiêu thứ ' + index + ' của bạn : ');
     index++;
-    if (variable === "Done" || variable === null) {
+    if (variable === "Done" ) {
       alert("Bạn đã nhập xong các khoản chi tiêu và giờ tôi sẽ tính tổng cộng cho bạn.");
       break;
     }
     amountSpent.push(+variable);
-    if (isNaN(variable) || variable === '') {
+    if (isNaN(variable) || variable === ''|| variable === null) {
       alert("Có vẻ như bạn đã nhập chữ hoặc không nhập gì. Vui lòng nhập lại từ đầu.");
       amountSpent = new Array();
       index = 1;
