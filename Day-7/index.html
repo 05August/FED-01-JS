@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizz Này Khum Có Gì Dui</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 20px;
+        font-family: "Helvetica Neue", Helvetica, Arial;
+      }
+
+      button {
+        height: 40px;
+        width: 80px;
+        box-shadow: rgb(248, 218, 233) 0px 30px 60px -12px inset,
+          rgb(248, 218, 233) 0px 18px 36px -18px inset;
+        border: unset;
+        border-radius: 20px;
+      }
+
+      button:hover {
+        background-color: #daa2f2;
+        cursor: pointer;
+      }
+
+      #container-quiz {
+        background: url(./istockphoto-1223692043-612x612.jpg) center center / cover
+          no-repeat;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #box-quiz {
+        height: 30vw;
+        width: 50vw;
+        border: 2px solid #ccc;
+        border-radius: 30px;
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #quiz-questions {
+        word-break: break-word;
+        height: 70px;
+        width: 80%;
+        text-align: center;
+      }
+
+      #answer-button {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container-quiz">
+      <div id="box-quiz">
+        <div id="quiz-questions">Bạn là đàn ông phải không?</div>
+        <div id="answer-button">
+          <button id="button-yes">Yes</button>
+          <button id="button-no">No</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
