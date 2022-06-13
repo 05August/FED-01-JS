@@ -11,7 +11,7 @@ const validateEmail = (input) => {
     ) !== null) return true;
   else {
     if (input == null || input == "") {
-      alert("Email can't be blank");
+      // alert("Email can't be blank");
       return false;
     }
     alert("Email is not a valid email address.");
@@ -23,7 +23,7 @@ const validateAge = (input) => {
   if (input >= 15 && input <= 65) return true;
   else {
     if (input == null || input == "") {
-      alert("Age can't be blank");
+      // alert("Age can't be blank");
       return false;
     }
     alert("Age is not a valid age(15<=Age<=65).");
@@ -33,7 +33,7 @@ const validateAge = (input) => {
 
 const validateName = (input) => {
   if (input == null || input == "") {
-    alert("Name can't be blank");
+    // alert("Name can't be blank");
     return false;
   } else if (input.length < 6) {
     alert("Name must be at least 6 characters long.");
@@ -44,7 +44,7 @@ const validateName = (input) => {
 
 const validatePhoneNumber = (input) => {
   if (input == null || input == "") {
-    alert("PhoneNumber can't be blank");
+    // alert("PhoneNumber can't be blank");
     return false;
   } else if (input.length < 10) {
     alert("PhoneNumber must be at least 10 characters long.");
@@ -64,11 +64,16 @@ const checkValidInput = () => {
   window.localStorage.setItem("ageInput", ageInput);
   window.localStorage.setItem("phoneNumberInput", phoneNumberInput);
 
-  if (!validateName(nameInput) || !validateEmail(emailInput) || !validateAge(ageInput) || !validatePhoneNumber(phoneNumberInput)) {
-    alert("Please enter!");
+  if(!validateName(nameInput) && !validateEmail(emailInput) && !validateAge(ageInput) && !validatePhoneNumber(phoneNumberInput)){
+    alert("Input can't be empty!");
   }
-  else {
-    window.location.assign("./courses.html");
+  else{
+    if (!validateName(nameInput) || !validateEmail(emailInput) || !validateAge(ageInput) || !validatePhoneNumber(phoneNumberInput)) {
+      alert("Input can't be empty!");
+    }
+    else {
+      window.location.assign("./courses.html");
+    }
   }
 }
 
