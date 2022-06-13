@@ -159,14 +159,16 @@ const insertText = () => {
 }
 
 const checkValidateTotalMoney=() => {
-  if (totalMoney > 1000) {
-    alert("Bạn được giảm giá 10% vì tổng số tiền lớn hơn 1.000k");
-    totalMoney = totalMoney * (9 / 10);
-  }
+  totalMoney = +window.localStorage.getItem("totalMoney");
   if (totalMoney > 600 && totalMoney < 1000) {
     alert("Bạn được giảm giá 5% vì tổng số tiền lớn hơn 600k");
     totalMoney = totalMoney * (95 / 100);
   }
+  if (totalMoney > 1000) {
+    alert("Bạn được giảm giá 10% vì tổng số tiền lớn hơn 1.000k");
+    totalMoney = totalMoney * (9 / 10);
+  }
+  
   document.getElementById("total-money-after").textContent = Math.round(totalMoney) + "k";
 }
 
@@ -176,12 +178,14 @@ const checkCoupon = () => {
   if (valueCoupon === "01062022") {
     alert("Mã giảm giá hợp lệ ,bạn được giảm 50k.");
     totalMoney -= 50;
+    window.localStorage.setItem("totalMoney", totalMoney);
   }
   else if(valueCoupon === ""){
     alert("Bạn không sử dụng mã giảm giá.");
   }
   else {
     alert("Mã giảm giá không hợp lệ, vui lòng kiểm tra lại.");
+    document.getElementById("coupon").value="";
   }
 }
 
