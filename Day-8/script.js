@@ -159,7 +159,10 @@ const insertText = () => {
 }
 
 const checkValidateTotalMoney=() => {
-  totalMoney = +window.localStorage.getItem("totalMoney");
+  totalMoney=+window.localStorage.getItem("totalMoney");
+  if(document.getElementById("coupon").value==="01062022"){
+    totalMoney -= 50;
+  }
   if (totalMoney > 600 && totalMoney < 1000) {
     alert("Bạn được giảm giá 5% vì tổng số tiền lớn hơn 600k");
     totalMoney = totalMoney * (95 / 100);
@@ -178,7 +181,6 @@ const checkCoupon = () => {
   if (valueCoupon === "01062022") {
     alert("Mã giảm giá hợp lệ ,bạn được giảm 50k.");
     totalMoney -= 50;
-    window.localStorage.setItem("totalMoney", totalMoney);
   }
   else if(valueCoupon === ""){
     alert("Bạn không sử dụng mã giảm giá.");
