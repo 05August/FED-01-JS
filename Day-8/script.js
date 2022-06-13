@@ -22,7 +22,7 @@ const validateEmail = (input) => {
 const validateAge = (input) => {
   if (input >= 15 && input <= 65) return true;
   else {
-    if (input == null || input == "") {
+    if (input == null ||(input == ""&&input!==0)) {
       alert("Age can't be blank");
       return false;
     }
