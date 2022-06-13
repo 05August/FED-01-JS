@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <title>Courses</title>
+    <style>
+      form {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        width: 400px;
+        height: 450px;
+        background-color: #fff;
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+
+      form > div:first-child {
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      form > div:last-child {
+        text-align: center;
+        position: relative;
+        top: 15px;
+      }
+
+      form > div:nth-child(2) {
+        padding-left: 40px;
+        padding-top: 10px;
+      }
+
+      label.checkbox-costum-label {
+        top: 9px;
+        left: 31px;
+        position: relative;
+      }
+
+      .checkbox-custom {
+        opacity: 0;
+        position: absolute;
+      }
+
+      .checkbox-custom,
+      .checkbox-custom-label {
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .checkbox-custom-label {
+        user-select: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        position: relative;
+      }
+
+      .checkbox-custom + .checkbox-custom-label:before {
+        content: "";
+        background: #fff;
+        border: 3px solid #000;
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+        margin-right: 5px;
+        text-align: center;
+      }
+
+      .checkbox-custom:checked + .checkbox-custom-label:before {
+        background: black;
+        box-shadow: inset 0px 0px 0px 4px #fff;
+      }
+
+      .checkbox-custom:focus + .checkbox-custom-label {
+        outline: 1px solid #ddd;
+        /* focus style */
+      }
+
+      button {
+        text-transform: uppercase;
+        width: 113px;
+        height: 38px;
+        background: #fff;
+        border-radius: 15px;
+        color: #000;
+        border: 4px solid #000000;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div><h1>Courses List</h1></div>
+      <div>
+        <div onclick="checkCountAmountCourses()">
+          <input id="checkbox-1" class="checkbox-custom" name="jsbasic" type="checkbox" />
+          <label for="checkbox-1" class="checkbox-custom-label"
+            >Khóa học JS căn bản - 99k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input id="checkbox-2" class="checkbox-custom" name="cbasic" type="checkbox" />
+          <label for="checkbox-2" class="checkbox-custom-label"
+            >Khóa học C căn bản - 99k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input
+            id="checkbox-3"
+            class="checkbox-custom"
+            name="pythonbasic"
+            type="checkbox"
+          />
+          <label for="checkbox-3" class="checkbox-custom-label"
+            >Khóa học Python căn bản - 99k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input
+            id="checkbox-4"
+            class="checkbox-custom"
+            name="htmlcssbasic"
+            type="checkbox"
+          />
+          <label for="checkbox-4" class="checkbox-custom-label"
+            >Khóa học Html Css căn bản - 599k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input
+            id="checkbox-5"
+            class="checkbox-custom"
+            name="javabasic"
+            type="checkbox"
+          />
+          <label for="checkbox-5" class="checkbox-custom-label"
+            >Khóa học Java căn bản - 499k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input
+            id="checkbox-6"
+            class="checkbox-custom"
+            name="sqlbasic"
+            type="checkbox"
+          />
+          <label for="checkbox-6" class="checkbox-custom-label"
+            >Khóa hoc SQL căn bản - 399k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input
+            id="checkbox-7"
+            class="checkbox-custom"
+            name="rubybasic"
+            type="checkbox"
+          />
+          <label for="checkbox-7" class="checkbox-custom-label"
+            >Khóa học Ruby căn bản - 499k</label
+          >
+        </div>
+        <div onclick="checkCountAmountCourses()">
+          <input
+            id="checkbox-8"
+            class="checkbox-custom"
+            name="cplusbasic"
+            type="checkbox"
+          />
+          <label for="checkbox-8" class="checkbox-custom-label"
+            >Khóa học C++ căn bản - 499k</label
+          >
+        </div>
+      </div>
+      <div>
+        <button type="button" id="myBtn" onclick="nextPage()">Next</button>
+      </div>
+    </form>
+    <script>
+      window.onload = function () {
+        window.localStorage.setItem("indexPage", "1");
+      alert("When you choose 3 courses with a total of less than 300k, you can choose another course.");
+
+      };
+      let count = 0;
+      let validateMoney=0;
+      let totalMoney=0;
+      let arrValueCheckbox = document.getElementsByTagName("input");
+      const arrDataUser = new Array();
+      const arrDataCourses =[
+        {
+          coursesName : "Khóa học JS căn bản",
+          coursesPrice : 99,
+        },
+        {
+          coursesName : "Khóa học C căn bản",
+          coursesPrice : 99,
+        },
+        {
+          coursesName : "Khóa học Python căn bản",
+          coursesPrice : 99,
+        },
+        {
+          coursesName : "Khóa học Html Css căn bản",
+          coursesPrice : 599,
+        },
+        {
+          coursesName : "Khóa học Java căn bản",
+          coursesPrice : 499,
+        },
+        {
+          coursesName : "Khóa hoc SQL căn bản",
+          coursesPrice : 399,
+        },
+        {
+          coursesName : "Khóa học Ruby căn bản",
+          coursesPrice : 499,
+        },
+        {
+          coursesName : "Khóa học C++ căn bản",
+          coursesPrice : 499,
+        }
+      ]
+    </script>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
