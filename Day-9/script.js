@@ -118,13 +118,14 @@ const listShop = [
 
 
 listShop.map(x => x.products = x.products.map(element => element = element.sku + "-" + element.name + "-" + element.price).join("<br/>"));
-let htmlTable = '';
+let htmlTable = `<tr> <th>Name Shop</th> <th>Address</th> <th>Charged Of</th> <th>Phone Number</th> <th>Products</th> </tr>`;
 
 for(element in listShop){
   htmlTable +=`<tr> <td>${listShop[element].nameShop} </td> <td>${listShop[element].address}</td> <td>${listShop[element].chargedOf}</td> <td>${listShop[element].phoneNumber}</td> <td>${listShop[element].products}</td> </tr>`
 }
 
+const drawTable=()=>{
+ document.getElementById("my-table").innerHTML = htmlTable;
+}
 
-
-document.getElementById("content-table").innerHTML = htmlTable;
 // listShop.map(el => el.products = el.products.join("<br/>"));
