@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        /* padding: 20px; */
+        border: 1px solid #888;
+        height: 150px;
+        width: 300px;
+      }
+
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #ex-form {
+        height: 150px;
+        width: 300px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 150px;
+        width: 300px;
+        justify-content: space-around;
+      }
+
+      #input-number {
+        height: 40px;
+        width: 200px;
+        outline: none;
+        border: 2px solid;
+        border-radius: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      #my-table {
+        width:50%;
+      }
+
+      #my-table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td{
+        text-align: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="ex-form">
+          <form>
+            <label for="input-number"><h3>Nhập N</h3></label>
+            <input id="input-number" type="number" name="input-number" min="0" required />
+            <button type="button" id="myBtn" onclick="draw()">Vẽ hình</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <p id="text"></p>
+    <button type="button" id="myBtn" onclick="drawTable()">Vẽ bảng</button>
+    <table id="my-table">
+      <!-- <thead>
+        <tr>
+          <th>Name Shop</th>
+          <th>Address</th> 
+          <th>Charged Of</th>
+          <th>Phone Number</th>
+          <th>Products</th>
+        </tr>
+      </thead>
+      <tbody id="content-table">
+
+      </tbody>
+       -->
+
+
+    </table>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
