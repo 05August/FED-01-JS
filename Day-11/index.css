@@ -85,7 +85,7 @@ body {
   background-color: #fff;
   padding-top: 20px;
   margin-top: 20px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
