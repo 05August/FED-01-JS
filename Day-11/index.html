@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>JS-Day-11</title>
+  </head>
+  <body>
+    <div id="container-modal">
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <form id="login-form">
+            <div><h1>Log in</h1></div>
+            <div>
+              <input
+                type="text"
+                id="account-name"
+                name="account-name"
+                placeholder="Tài khoản ,email hoặc số điện thoại"
+              />
+              <div id="alert-1" class="css-alert"></div>
+            </div>
+            <div>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Mật khẩu"
+              />
+              <div id="alert-2" class="css-alert"></div>
+            </div>
+            <div>
+              <button type="button" id="btn-login">Đăng Nhập Ngay</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!------------------ Html của form Register  -------------------->
+
+    <form id="register-form">
+      <p>Xin lỗi thầy vì sự lười nhác này , em chưa check điều kiện các trường nhập vào nên mong thầy nhập đúng <3</p>
+      <h1>Register Form</h1>
+      <div>
+        <label for="idnumber">ID</label>
+        <input type="text" id="idnumber" name="idnumber" placeholder="Enter your ID" />
+      </div>
+      <div>
+        <label for="name">FullName</label>
+        <input type="text" id="name" name="fullname" placeholder="Enter your full name" />
+      </div>
+      <div>
+        <label for="dob">BirthDay</label>
+        <input type="text" id="dob" name="dob" placeholder="Enter your Birth Day" />
+      </div>
+      <div>
+        <label for="phonenumber">PhoneNumber</label>
+        <input
+          type="text"
+          id="phonenumber"
+          name="phonenumber"
+          placeholder="Enter your phone number"
+        />
+      </div>
+      <button type="button" id="insert-student">Add</button>
+      <button type="button" id="submit-student">Submit</button>
+      <table id="table-students"></table>
+      
+      <button type="button" id="log-out">Log out</button>
+    </form>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>

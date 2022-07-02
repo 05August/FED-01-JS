@@ -1,17 +1,18 @@
+
+
 const validationRule = {
-  username: { min: 4, max: 8, isRequired: true, regExPattern: '' },
-  password: { min: 6, max: 9, isRequired: true, regExPattern: '' },
-  phoneNumber: { min: 10, max: 11, isRequired: true, regExPattern: '',isNumber: true,name },
-  address: { min: 10, max: 60, isRequired: true, regExPattern: '' },
+  username: { min: 4, max: 8, isRequired: true, regExPattern: '', isNumber: false },
+  password: { min: 6, max: 9, isRequired: true, regExPattern: '', isNumber: false },
+  phoneNumber: { min: 10, max: 11, isRequired: true, regExPattern: '', isNumber: true },
+  address: { min: 10, max: 60, isRequired: true, regExPattern: '', isNumber: false },
 
 };
 
 document.getElementById('submit').onclick = () => {
-
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const phoneNumber = document.getElementById('phonenumber').value;
-  const address = document.getElementById('address').value;
+  const username = $('#username').value;
+  const password = $('#password').value;
+  const phoneNumber = $('#phonenumber').value;
+  const address = $('#address').value;
 
 
 
@@ -23,18 +24,23 @@ document.getElementById('submit').onclick = () => {
   };
   const arrayFieldValid = Object.keys(fieldValue).map((keyItem) => {
     if (!fieldValue[keyItem] && validationRule[keyItem].isRequired) {
-      return false;
+      return { [keyItem]: false };
+
     }
 
     if (
       fieldValue[keyItem].length < validationRule[keyItem].min ||
       fieldValue[keyItem].length > validationRule[keyItem].max
     ) {
-      return false;
-    }
-    if(isNaN)
+      return { [keyItem]: false };
 
-    return true;
+    }
+    if (isNaN(fieldValue[keyItem]) && validationRule[keyItem].isNumber === true) {
+      return { [keyItem]: false };
+
+    }
+
+    return { [keyItem]: true };
   });
   console.log("🚀 ~ file: script.js ~ line 38 ~ arrayFieldValid ~ arrayFieldValid", arrayFieldValid)
 }

@@ -62,11 +62,8 @@ class solider extends chessMan {
   }
 }
 
-// const arrayItem = new Array(9).fill({});
-// console.log('arrayItem', arrayItem);
-
-const boardGame = new Array(10).fill(new Array(9).fill({}));
-console.log('boardGame', boardGame);
+let boardGame = new Array(10).fill();
+boardGame = boardGame.map((item) => new Array(9).fill({}));
 
 let board = '';
 
