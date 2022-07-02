@@ -7,7 +7,7 @@ const arrAccount = [
 ]
 localStorage.setItem('admin', JSON.stringify(arrAccount));
 
-
+//tạo class students
 class student {
   constructor(idnumber, name, dob, phonenumber) {
     this.idnumberStudent = idnumber;
@@ -16,10 +16,15 @@ class student {
     this.phonenumberStudent = phonenumber;
   }
 }
+
+//Kiểm tra trạng thái xem còn đăng nhâpj không.
+
 if (localStorage.getItem('login-status') === 'successful') {
   document.getElementById("container-modal").style.display = "none";
   document.getElementById("register-form").style.display = "block";
 }
+
+//kiểm tra data xem có không để in ra
 if(localStorage.getItem('data-students')!==null) {
   var userLocalStorage = JSON.parse(localStorage.getItem('data-students'));
   textHtmlStudents = `<tr> <th>ID</th> <th>Name</th> <th>DOB</th> <th>Phone Number</th></tr>`;
@@ -29,6 +34,7 @@ if(localStorage.getItem('data-students')!==null) {
   document.getElementById("table-students").innerHTML=textHtmlStudents;
 }
 
+//phần ni của modal
 document.getElementById('btn-login').onclick = () => {
   const accUser = document.getElementById('account-name').value;
   const passUser = document.getElementById('password').value;
@@ -64,6 +70,8 @@ document.getElementById('btn-login').onclick = () => {
   }
 }
 
+
+//phần ni của form mà chưa hoàn thiện
 function resetInputValue() {
   $('#idnumber')[0].value='';
   $('#name')[0].value='';
@@ -155,6 +163,8 @@ document.getElementById('insert-student').onclick = () => {
 
 }
 
+
+//phần ni để in ra bảng
 document.getElementById("submit-student").onclick = () => {
   if(textHtmlStudents===''){
   textHtmlStudents = `<tr> <th>ID</th> <th>Name</th> <th>DOB</th> <th>Phone Number</th></tr>`;
@@ -166,7 +176,7 @@ document.getElementById("submit-student").onclick = () => {
   document.getElementById("table-students").innerHTML=textHtmlStudents;
 }
 
-
+//phần ni để đăng xuất
 document.getElementById("log-out").onclick = () => {
   alert("Đăng xuất thành công!");
       document.getElementById("container-modal").style.display = "flex";
