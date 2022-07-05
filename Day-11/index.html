@@ -43,19 +43,23 @@
     <!------------------ Html của form Register  -------------------->
 
     <form id="register-form">
-      <p>Xin lỗi thầy vì sự lười nhác này , em chưa check điều kiện các trường nhập vào nên mong thầy nhập đúng <3</p>
       <h1>Register Form</h1>
       <div>
         <label for="idnumber">ID</label>
         <input type="text" id="idnumber" name="idnumber" placeholder="Enter your ID" />
+        <div id="alert-idnumber" class="css-alert"></div>
       </div>
       <div>
         <label for="name">FullName</label>
         <input type="text" id="name" name="fullname" placeholder="Enter your full name" />
+        <div id="alert-name" class="css-alert"></div>
+
       </div>
       <div>
         <label for="dob">BirthDay</label>
         <input type="text" id="dob" name="dob" placeholder="Enter your Birth Day" />
+        <div id="alert-dob" class="css-alert"></div>
+
       </div>
       <div>
         <label for="phonenumber">PhoneNumber</label>
@@ -65,11 +69,14 @@
           name="phonenumber"
           placeholder="Enter your phone number"
         />
+        <div id="alert-phonenumber" class="css-alert"></div>
+
       </div>
-      <button type="button" id="insert-student">Add</button>
-      <button type="button" id="submit-student">Submit</button>
+      <div>
+        <button type="button" id="insert-student">Add</button>
+      </div>
       <table id="table-students"></table>
-      
+
       <button type="button" id="log-out">Log out</button>
     </form>
 
