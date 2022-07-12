@@ -24,7 +24,7 @@ $('.buttons').forEach(element => element.onclick = () => {
         else {
           if (textScreen[textScreen.length - 1] !== '.') {
             textScreen += '.';
-            textCulcalator='.';
+            textCulcalator +='.';
             $('#calculator-screen-text')[0].innerHTML = textScreen;
           }
         }
@@ -60,14 +60,14 @@ $('.buttons').forEach(element => element.onclick = () => {
         break;
 
       case element.innerHTML === '=':
-        textScreen =''+ eval(textCulcalator);
+        textScreen =''+ Math.round(eval(textCulcalator)*100)/100;
         textCulcalator =''+ textScreen;
         $('#calculator-screen-text')[0].innerHTML = textScreen;
         break;
 
       case element.innerHTML === '%':
         //Đoạn này em có nghĩ đến bug tràn màn hình , em định if 1 cái length của textScreen<18 mới cho chạy cái dưới còn cái tràn màn hình chưa biết làm sao cho hợp lí.
-        textScreen = eval(textCulcalator) + '00%';
+        textScreen =Math.round(eval(textCulcalator)*10000)/100 +'%';
         $('#calculator-screen-text')[0].innerHTML = textScreen;
         break;
 
@@ -86,5 +86,7 @@ $('.buttons').forEach(element => element.onclick = () => {
         break;
 
     }
+    console.log(textCulcalator);
+    console.log(textScreen);
   }
 })
