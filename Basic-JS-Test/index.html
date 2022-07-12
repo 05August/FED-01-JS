@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Basic-JS-Test</title>
+</head>
+<body>
+  <div id="container-modal">
+    <div id="my-modal">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name-user" name="name" placeholder="Type of name.">
+      <button type="button" id="btn-start">Start</button>
+    </div>
+  </div>
+
+
+
+  <div id="my-game">
+    <header>
+      <div id="help">
+        <button type="button" id="btn-next">Next</button> 
+        <button type="button" id="btn-excommunicate">50/50</button>     
+      </div>
+      <div id="points">0 Điểm
+      </div>
+    </header>
+
+    <main>
+      <div id="question-oder">
+        Câu 1.
+      </div>
+      <div id="question-content">
+        Đâu là thủ đô của Việt Nam?
+      </div>
+      <div id="question-answer">
+        <div>
+          <input type="radio" name="answer" id="option-a">
+          A.
+          <div class="answer-content" id="option-a-content">
+          Hà Nội
+          </div>
+        </div>
+        <div>
+          <input type="radio" name="answer" id="option-b">
+          B.
+          <div class="answer-content" id="option-b-content">
+          Cần Thơ
+          </div>
+        </div>
+        <div>
+          <input type="radio" name="answer" id="option-c">
+          C.
+          <div class="answer-content" id="option-c-content">
+          Đà Nẵng
+          </div>
+        </div>
+        <div>
+          <input type="radio" name="answer" id="option-d">
+          D.
+          <div class="answer-content" id="option-d-content">
+          TP. Hồ Chí Minh
+          </div>
+        </div>
+      </div>
+
+      <button type="button" id="answer-submit">Kiểm Tra</button>
+    </main>
+    
+  </div>
+
+
+  <script type="text/javascript" src="./script.js" ></script>
+</body>
+</html>
