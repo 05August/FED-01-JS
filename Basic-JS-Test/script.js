@@ -111,5 +111,7 @@ $('btn-next').onclick = () =>{
 $('btn-excommunicate').onclick = () => {
   let answer=arrAnswer[indexQuestion-1];
   let newArrAnswer =['a','b','c','d'].filter(word => word!==answer);
-  console.log("🚀 ~ file: script.js ~ line 107 ~ newArrAnswer", newArrAnswer)
+  $(`option-${newArrAnswer[0]}-content`).innerText='';
+  $(`option-${newArrAnswer[2]}-content`).innerText='';
+  $('btn-excommunicate').style.display = "none";
 }
