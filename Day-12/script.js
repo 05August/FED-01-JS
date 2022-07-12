@@ -7,11 +7,10 @@ let textCulcalator = '';
 
 $('.buttons').forEach(element => element.onclick = () => {
 
-  if (textScreen.length < 21) { //check độ dài của số xem có tràn mh hay không
+  if (textScreen.length < 21) { //check độ dài của số xem có tràn mh hay không.
     switch (true) {
       
-      case (element.innerHTML === '/' || element.innerHTML === '*'|| element.innerHTML ==='exp'|| element.innerHTML === '%')&&(textScreen.length< 1):
-        console.log(1);
+      case ['/','*', 'exp', '%'].includes(element.innerHTML)&&textScreen.length === 0:
         $('#calculator-screen-text')[0].innerHTML ='Cần có tham số ở trước.';
         break;
 
@@ -77,6 +76,13 @@ $('.buttons').forEach(element => element.onclick = () => {
           if(textCulcalator.slice(-1)!=='+'){
           textCulcalator+='+';
           }
+        }
+        else if((['/','*'].includes(element.innerHTML))&&(['+','-'].includes(textCulcalator.slice(-1)))){
+          $('#calculator-screen-text')[0].innerHTML ='Không hợp lệ';
+          console.log('test');
+          textCulcalator='';
+          textScreen='';
+          break;
         }
         else{
           textCulcalator += element.innerHTML;
