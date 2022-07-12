@@ -87,6 +87,5 @@ $('.buttons').forEach(element => element.onclick = () => {
 
     }
     console.log(textCulcalator);
-    console.log(textScreen);
   }
 })
