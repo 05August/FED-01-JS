@@ -21,7 +21,7 @@ body {
 
 /* Css Modal */
 #container-modal {
-  display: none;
+  display: flex;
   height: 200px;
   width: 200px;
   border: 2px solid black;
@@ -40,6 +40,7 @@ body {
 
 /* Css Game Screen */
 #my-game {
+  display: none;
   height: 400px;
   width: 600px;
   background-color: pink;
