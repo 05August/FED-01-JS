@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Basic-JS-Test-2</title>
+  </head>
+  <body>
+    <div id="notify-app">
+      <div id="today-notify"></div>
+      <div id="main-notify">
+        <div id="title-app">
+          <h1>Nhắc Nhở Quan Trọng Của Bạn</h1>
+        </div>
+        <div id="content">
+          <div id="notify-note">
+            <div>
+              <label for="notify-content">Nội Dung</label>
+              <input
+                type="text"
+                id="notify-content"
+                name="notify-content"
+                placeholder="Mời nhập nội dung của ngày."
+              />
+            </div>
+            <div>
+              <label for="notify-day">Ngày Nhắc</label>
+              <input type="date" id="notify-day" name="notify-day" />
+            </div>
+            <button type="button" id="btnSave">Lưu Ngày</button>
+            <div id="error-alert-content">Bạn chưa chọn nội dung</div>
+            <div id="error-alert-day">Bạn chưa chọn ngày nhắc</div>
+          </div>
+          <div id="notify-list">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
