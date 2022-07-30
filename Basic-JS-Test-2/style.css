@@ -21,6 +21,11 @@ body {
 
 #today-notify {
   height: 20%;
+  text-align: center;
+}
+
+#today-notify div{
+  background: #fff;
 }
 
 #main-notify {
