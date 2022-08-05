@@ -1,6 +1,6 @@
 const $ = (selector) => document.getElementById(selector);
 let listNotify = new Array();
-listNotify=JSON.parse(localStorage.getItem('notify-list'));
+listNotify = JSON.parse(localStorage.getItem('notify-list')) === null ? new Array() : JSON.parse(localStorage.getItem('notify-list'));
 let textHtmlNotify = '';
 
 
@@ -23,9 +23,9 @@ const deleteItem = () => {
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
       var div = this.parentElement;
-      var indexOfListNotify =div.getAttribute('index');
-      if(isToday(new Date(listNotify[indexOfListNotify].date[0], listNotify[indexOfListNotify].date[1] - 1, listNotify[indexOfListNotify].date[2]))){
-        $('today-notify').innerHTML="";
+      var indexOfListNotify = div.getAttribute('index');
+      if (isToday(new Date(listNotify[indexOfListNotify].date[0], listNotify[indexOfListNotify].date[1] - 1, listNotify[indexOfListNotify].date[2]))) {
+        $('today-notify').innerHTML = "";
       }
       listNotify = listNotify.filter(element => element.content !== listNotify[indexOfListNotify].content);
       insertNotify();
@@ -43,7 +43,7 @@ const insertNotify = () => {
   for (let i = 0; i < listNotify.length; i++) {
     if (isToday(new Date(listNotify[i].date[0], listNotify[i].date[1] - 1, listNotify[i].date[2]))) {
       textHtmlNotify += `<div class="item today" index="${i}">Ngày ${listNotify[i].date[2]}/${listNotify[i].date[1]}/${listNotify[i].date[0]} <p>${listNotify[i].content}</p><span class="close">x</span></div>`;
-      $('today-notify').innerHTML=`<div><p>${listNotify[i].content}</p></div>`;
+      $('today-notify').innerHTML = `<div><p>${listNotify[i].content}</p></div>`;
     } else {
       textHtmlNotify += `<div class="item" index="${i}">Ngày ${listNotify[i].date[2]}/${listNotify[i].date[1]}/${listNotify[i].date[0]} <p>${listNotify[i].content}</p><span class="close">x</span></span></div>`;
     }
@@ -53,8 +53,8 @@ const insertNotify = () => {
   deleteItem();
 }
 
-if(JSON.parse(localStorage.getItem('notify-list'))!==null){
-  listNotify=JSON.parse(localStorage.getItem('notify-list'));
+if (JSON.parse(localStorage.getItem('notify-list')) !== null) {
+  listNotify = JSON.parse(localStorage.getItem('notify-list'));
   insertNotify();
 }
 
@@ -87,7 +87,7 @@ $('btnSave').onclick = function () {
   deleteItem();
 }
 
-if(listNotify.length > 0){
+if (listNotify.length > 0) {
   listNotify = listNotify.filter(element => isFutureDay(new Date(element.date[0], element.date[1] - 1, element.date[2])));
   insertNotify();
 

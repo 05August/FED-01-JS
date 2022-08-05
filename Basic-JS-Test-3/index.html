@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .second-loading {
+        margin: 50px auto;
+        height: 100px;
+        width: 100px;
+        position: relative;
+      }
+
+      .second-loading div:nth-child(1) {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        animation: load-second 1s infinite;
+        /* animation-delay: 1s; */
+      }
+
+      .second-loading div:nth-child(2) {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+
+        animation: load-second 2s infinite;
+        /* animation-delay: 2s; */
+      }
+
+      .second-loading div:nth-child(3) {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+
+        animation: load-second 3s infinite;
+        /* animation-delay: 3s; */
+      }
+
+      .second-loading div:nth-child(4) {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+
+        animation: load-second 4s infinite;
+        /* animation-delay: 4s; */
+      }
+
+      /* .second-loading div::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 10px;
+        background-color: black;
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+        -webkit-animation: load-second 1s infinite;
+        
+        -webkit-animation-delay: calc(var(--value) * 0.125s);
+        animation-delay: calc(var(--value) * 0.125s);
+      } */
+
+      @-webkit-keyframes load-second {
+        to {
+          opacity: calc(var(--value) + 1);
+        }
+      }
+
+      @keyframes load-second {
+        to {
+          opacity: calc(var(--value) + 1);
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Người được chọn</h1>
+    <h3 id="text">-------</h3>
+    <button id="random-select">Lựa Chọn</button>
+    <div id="container">
+      <div class="second-loading">
+        <div style="--value: 0">Thuận</div>
+        <div style="--value: 0">Hoàng</div>
+        <div style="--value: 0">Lộc</div>
+        <div style="--value: 0">Nam</div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
