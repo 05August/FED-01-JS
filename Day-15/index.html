@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  Thầy xem code nhé em k làm nút gì hết :v
+  copy dưới đây mở console để test
+  <h1>Local </h1>
+  <p>const myLocal = localStorageFeature('test');</p>
+  <p>myLocal.setItem('thuan dep chai vl');</p>
+  <p>myLocal.getItem('test');</p>
+  <p>myLocal.deleteItem('test');</p>
+  <h1>test sever</h1>
+  <p>const testSever= severFeature();
+  </p>
+  <p>testSever.getPost('http://localhost:3000/students');</p>
+  <p>testSever.createPost('http://localhost:3000/students',{id:0,name:"thanh"});</p>
+  <p>testSever.updatePost('http://localhost:3000/students/1',{id:0,name:"thanh dep chai 1234"});</p>
+  <p>testSever.deletePost('http://localhost:3000/students/1');</p>
+  <!-- <h1>test validation data</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p> -->
+  <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>

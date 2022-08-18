@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "name": "thuan dep chai"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "students": [
+    {
+      "id": 0,
+      "name": "thuan dep chai",
+      "phoneNumber": "1234567",
+      "email": "thuandepchai@gmail.com",
+      "birthday": "05/08/2002"
+    },
+    {
+      "id": 1,
+      "name": "toan dep chai",
+      "phoneNumber": "2345678",
+      "email": "toandepchai@gmail.com",
+      "birthday": "05/08/1996"
+    },
+    {
+      "id": 2,
+      "name": "thanh dep chai",
+      "phoneNumber": "0986258888",
+      "email": "thanhdepchai@gmail.com",
+      "birthday": "05/08/2002"
+    },
+    {
+      "id": 3,
+      "name": "trường đẹp chai",
+      "phoneNumber": "0986259999",
+      "email": "truongdepchai@gmail.com",
+      "birthday": "05/08/2002"
+    }
+  ]
+}

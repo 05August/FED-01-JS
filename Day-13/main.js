@@ -9,7 +9,6 @@ let myOclock = setInterval(setTime, 1000);
 
 
 ////////////////bai 2
-
 const $ = (selector) => document.getElementById(selector);
 let time = '';
 let points = 0;
@@ -158,7 +157,6 @@ for (i = 0; i < radioBtn.length; i++) {
     checkInput();
   }
 }
-
 
 
 
