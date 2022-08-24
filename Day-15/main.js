@@ -119,5 +119,18 @@ const validationData=()=> {
 }
 
 
-
+const dateFeature=(date)=>{
+  const format=()=>{
+    const arrDate=date.split('/');
+    arrDate.map((element)=>{
+      if(element<10){
+        element='0'+element;
+      }
+    })
+    return arrDate.join('/');
+  }
+  return{
+    format,
+  };
+}
 
